@@ -1,0 +1,28 @@
+---
+---
+
+$max-width: 64rem;
+
+$layout-farbg-color: #EBEBEB;
+$layout-nearbg-color: #FAFAFA;
+
+.mdl-layout__content {
+    background-color: $layout-farbg-color;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    > .page-content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        height: 100%;
+
+        padding: 1em;
+
+        background-color: $layout-nearbg-color;
+
+        max-width: $max-width;
+    }
+}

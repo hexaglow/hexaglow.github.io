@@ -1,0 +1,7 @@
+markdown: kramdown
+kramdown:
+    input: GFM
+
+contact_details:
+    twitter: hexaglow
+    email: matt@hexaglow.com

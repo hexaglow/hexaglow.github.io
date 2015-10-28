@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>
+            {% if page.title %}
+                {{ page.title }} on Hexaglow
+            {% else %}
+                Hexaglow
+            {% endif %}
+        </title>
+
+        {% include material_design_css_theme.html %}
+        <link rel="stylesheet" href="/css/header.css" />
+    </head>
+
+    <body>
+        {% include header_layout_open.html menu_links="default_menu_links.html" header_title=page.title %}
+            <main class="page-content mdl-shadow--4dp">
+                {{ content }}
+            </main>
+        {% include header_layout_close.html %}
+    </body>
+</html>
