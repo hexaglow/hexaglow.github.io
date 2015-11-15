@@ -11,7 +11,27 @@
   margin: 0;
 }
 
+@mixin jumbo($size: 2em, $gap: $size / 2) {
+  text-align: center;
+  font-size: $size;
+
+  * {
+    margin-top: 0.5 * $gap;
+    margin-bottom: 0.5 * $gap;
+  }
+}
+
+.jumbo-1-5 { @include jumbo(1.5em); }
+.jumbo-2-0 { @include jumbo(2em); }
+.jumbo-2-5 { @include jumbo(2.5em); }
+.jumbo-3-0 { @include jumbo(3em); }
+
 .centre {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
   box-sizing: border-box;
   width: 100%;
   max-width: $content-width + $sidebar-width;
@@ -20,31 +40,35 @@
   * {
     box-sizing: border-box;
   }
+}
 
-  > .primary-layout {
-    display: flex;
-    flex-flow: row wrap;
+.primary-layout {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 100vw;
 
-    justify-content: center;
-    align-items: baseline;
+  display: flex;
+  flex-flow: row wrap;
 
-    > main {
-      @include card;
+  justify-content: center;
+  align-items: baseline;
 
-      flex: 0 1 $content-width;
-      padding: 0 1rem;
-    }
+  > main {
+    @include card;
 
-    > aside {
-      padding: 0.5rem 1rem;
-      background-color: darken(white, 10%);
+    flex: 0 1 $content-width;
+    padding: 0 1rem;
+  }
 
-      //Behind the drop shadow.
-      position: relative;
-      z-index: -1;
+  > aside {
+    padding: 0.5rem 1rem;
+    background-color: darken(white, 10%);
 
-      max-width: $content-width;
-      flex: 1 0 $sidebar-width;
-    }
+    //Behind the drop shadow.
+    position: relative;
+    z-index: -1;
+
+    max-width: $content-width;
+    flex: 1 0 $sidebar-width;
   }
 }
