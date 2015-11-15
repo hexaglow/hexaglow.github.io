@@ -1,0 +1,45 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% if page.title %}
+        {{ page.title }} - {{ site.title }}
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </title>
+
+    {% include head_meta.html %}
+    {% include pure_css.html %}
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+  </head>
+
+  <body>
+    <div class="pure-menu pure-menu-horizontal">
+      <a href="/" class="pure-menu-heading pure-menu-link">hexaglow.com</a>
+      <div class="flex-spacer"></div>
+      <ul class="pure-menu-list">
+        {% for link in site.menu_links %}
+          {% assign text = link[0] %}
+          {% assign href = link[1] %}
+          <li class="pure-menu-item">
+            <a class="pure-menu-link" href="{{ href }}">{{ text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="centre">
+      <div class="primary-layout">
+        <main>{{ content }}</main>
+        {% if page.sidebar %}
+          <aside>{% include {{ page.sidebar }} %}</aside>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

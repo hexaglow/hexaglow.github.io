@@ -2,6 +2,12 @@ kramdown:
   input: GFM
   hard_wrap: false
 
+title: Hexaglow
+
 contact_details:
   twitter: hexaglow
   email: matt@hexaglow.com
+
+menu_links:
+  About: "/about"
+  Blog: "/blog"

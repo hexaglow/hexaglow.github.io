@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: header_special_article
+layout: plain
 ---
 
 # Matt Randell

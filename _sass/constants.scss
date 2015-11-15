@@ -1,5 +1,11 @@
-$max-width: 80rem;
+$content-width: 64rem;
+$sidebar-width: 16rem;
+
 $footer-height: 8rem;
 
-$layout-farbg-color: #EBEBEB;
-$layout-nearbg-color: #FAFAFA;
+@mixin card($drop-color: black) {
+  box-shadow: 0 0 0.5rem 0.1rem fade-out($drop-color, 0.85);
+
+  position: relative;
+  transform: translateZ(1);
+}

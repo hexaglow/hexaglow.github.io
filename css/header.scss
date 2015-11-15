@@ -2,47 +2,25 @@
 ---
 @import "constants";
 
-.mdl-layout__content {
-  background-color: $layout-farbg-color;
+body > .pure-menu:first-of-type {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
+
+  margin-bottom: 0.75rem;
+
+  background-color: white;
+  @include card;
 
   * {
-    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
   }
 
-  > .page-content {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    min-height: calc(100% - #{$footer-height});
-
-    padding: 1rem;
-
-    background-color: $layout-nearbg-color;
-
-    max-width: $max-width;
-  }
-}
-
-a.unstyled-link {
-  font-style: inherit;
-  text-decoration: inherit;
-  color: inherit;
-}
-
-.mdl-layout__drawer {
-  > .mdl-layout-title {
-    line-height: normal;
-    padding-right: 1rem;
-    padding-top: 2rem;
-  }
-
-  > .drawer-page-title {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 1rem 2rem;
-    text-align: justify;
-    font-size: 1.15em;
-    font-style: italic;
+  > .pure-menu-heading {
+    font-weight: 575; //somewhere between normal and bold.
   }
 }

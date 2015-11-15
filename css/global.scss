@@ -1,0 +1,50 @@
+---
+---
+@import "constants";
+
+.flex-spacer {
+  flex-grow: 10000000;
+  display: inline-block;
+  box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
+}
+
+.centre {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $content-width + $sidebar-width;
+  margin: 0 auto;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  > .primary-layout {
+    display: flex;
+    flex-flow: row wrap;
+
+    justify-content: center;
+    align-items: baseline;
+
+    > main {
+      @include card;
+
+      flex: 0 1 $content-width;
+      padding: 0 1rem;
+    }
+
+    > aside {
+      padding: 0.5rem 1rem;
+      background-color: darken(white, 10%);
+
+      //Behind the drop shadow.
+      position: relative;
+      z-index: -1;
+
+      max-width: $content-width;
+      flex: 1 0 $sidebar-width;
+    }
+  }
+}
